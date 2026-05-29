@@ -3,7 +3,14 @@ import google.generativeai as genai
 from dotenv import load_dotenv
 import os
 from google.api_core.exceptions import ResourceExhausted
-
+from memory.user_profile import load_user_profile
+from memory.memory_manager import (
+    save_post_memory,
+    build_memory_context
+)
+from memory.user_learning import (
+    build_writing_profile
+)
 # =========================================
 # LOAD ENV VARIABLES
 # =========================================
@@ -25,6 +32,12 @@ genai.configure(
 model = genai.GenerativeModel(
     "gemini-2.5-flash"
 )
+
+# =========================================
+# LOAD USER PROFILE
+# =========================================
+
+profile = load_user_profile()
 
 # =========================================
 # PAGE CONFIG
@@ -153,10 +166,38 @@ if st.button("🚀 Analyze Post"):
 
         st.warning("Please enter a LinkedIn post.")
 
-    else:
+else:
 
-        prompt = f"""
+    memory_context = build_memory_context(
+        post_input
+    )
+
+    learning_profile = build_writing_profile()
+    
+
+    prompt = f"""
 You are an expert LinkedIn growth strategist.
+
+USER PROFILE
+
+Name:
+{profile['name']}
+
+Niche:
+{profile['niche']}
+
+Target Audience:
+{profile['target_audience']}
+
+Preferred Tone:
+{profile['preferred_tone']}
+
+Primary Goal:
+{profile['goal']}
+
+RELEVANT PREVIOUS POSTS
+
+{memory_context}
 
 Analyze the LinkedIn post below.
 
@@ -196,7 +237,7 @@ BEST_POSTING_TIME:
 (Suggest best posting time)
 
 REWRITTEN_POST:
-(Write improved LinkedIn version)
+(Write improved LinkedIn version that aligns with the user's niche, preferred tone, target audience and authority-building goal)
 
 HASHTAGS:
 (List hashtags separated by commas)
@@ -205,13 +246,17 @@ LinkedIn Post:
 {post_input}
 """
 
-        try:
+
+try:
 
             with st.spinner("Analyzing your LinkedIn post..."):
 
                 response = model.generate_content(prompt)
 
                 result = response.text
+                save_post_memory(
+    post_input
+)
 
                 # =========================================
                 # PARSE RESPONSE
@@ -336,58 +381,20 @@ LinkedIn Post:
                     f"⚠️ Weakest Area: {weakest_area}"
                 )
 
-                # =========================================
-                # FEEDBACK SECTIONS
-                # =========================================
-
                 st.subheader("🪝 Hook Feedback")
-
-                st.write(
-                    sections.get(
-                        "HOOK_FEEDBACK",
-                        "Not Available"
-                    )
-                )
+                st.write(sections.get("HOOK_FEEDBACK", "Not Available"))
 
                 st.subheader("📖 Readability Feedback")
-
-                st.write(
-                    sections.get(
-                        "READABILITY_FEEDBACK",
-                        "Not Available"
-                    )
-                )
+                st.write(sections.get("READABILITY_FEEDBACK", "Not Available"))
 
                 st.subheader("📈 Engagement Suggestions")
-
-                st.write(
-                    sections.get(
-                        "ENGAGEMENT_SUGGESTIONS",
-                        "Not Available"
-                    )
-                )
+                st.write(sections.get("ENGAGEMENT_SUGGESTIONS", "Not Available"))
 
                 st.subheader("🔥 CTA Suggestions")
-
-                st.write(
-                    sections.get(
-                        "CTA_SUGGESTIONS",
-                        "Not Available"
-                    )
-                )
+                st.write(sections.get("CTA_SUGGESTIONS", "Not Available"))
 
                 st.subheader("⏰ Best Posting Time")
-
-                st.success(
-                    sections.get(
-                        "BEST_POSTING_TIME",
-                        "Not Available"
-                    )
-                )
-
-                # =========================================
-                # REWRITTEN POST
-                # =========================================
+                st.success(sections.get("BEST_POSTING_TIME", "Not Available"))
 
                 st.subheader("✍️ Optimized LinkedIn Post")
 
@@ -402,10 +409,6 @@ LinkedIn Post:
                     height=300
                 )
 
-                # =========================================
-                # HASHTAGS
-                # =========================================
-
                 st.subheader("🏷️ Suggested Hashtags")
 
                 st.info(
@@ -415,12 +418,16 @@ LinkedIn Post:
                     )
                 )
 
-                # =========================================
-                # DOWNLOAD REPORT
-                # =========================================
-
                 full_report = f"""
 LINKEDIN AI ANALYSIS REPORT
+
+USER PROFILE
+
+Name: {profile['name']}
+Niche: {profile['niche']}
+Audience: {profile['target_audience']}
+Preferred Tone: {profile['preferred_tone']}
+Goal: {profile['goal']}
 
 HOOK SCORE:
 {sections.get("HOOK_SCORE", "")}
@@ -463,14 +470,12 @@ HASHTAGS:
                     mime="text/plain"
                 )
 
-        except ResourceExhausted:
+except ResourceExhausted:
 
             st.error(
-                "⚠️ Gemini API rate limit exceeded. "
-                "Please wait 20 seconds and try again."
+                "⚠️ Gemini API rate limit exceeded. Please wait 20 seconds and try again."
             )
-
-        except Exception as e:
+except Exception as e:
 
             st.error(
                 f"Unexpected Error: {e}"

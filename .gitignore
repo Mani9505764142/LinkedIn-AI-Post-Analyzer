@@ -1,0 +1,12 @@
+.env
+venv/
+__pycache__/
+
+memory/chroma_db/
+
+test_count.py
+test_learning.py
+test_memories.py
+test_memory.py
+test_models.py
+test_vector.py
