@@ -11,6 +11,12 @@ from memory.memory_manager import (
 from memory.user_learning import (
     build_writing_profile
 )
+from memory.user_learning import (
+    build_writing_profile
+)
+from intelligence.ai_hook_classifier import (
+    classify_hook_ai
+)
 # =========================================
 # LOAD ENV VARIABLES
 # =========================================
@@ -257,7 +263,13 @@ try:
                 save_post_memory(
     post_input
 )
+                # =========================================
+                # AI HOOK INTELLIGENCE
+                # =========================================
 
+                hook_analysis = classify_hook_ai(
+                 post_input
+)
                 # =========================================
                 # PARSE RESPONSE
                 # =========================================
@@ -380,6 +392,13 @@ try:
                     f"🔥 Strongest Area: {strongest_area} | "
                     f"⚠️ Weakest Area: {weakest_area}"
                 )
+                # =========================================
+                # AI HOOK INTELLIGENCE
+                # =========================================
+
+                hook_analysis = classify_hook_ai(
+                post_input
+               )
 
                 st.subheader("🪝 Hook Feedback")
                 st.write(sections.get("HOOK_FEEDBACK", "Not Available"))

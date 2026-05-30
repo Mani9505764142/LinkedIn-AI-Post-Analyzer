@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "author": "Justin Welsh",
+    "topic": "Solopreneurship",
+    "hook": "The 'Portfolio Career' is replacing the 9-to-5.",
+    "hook_type": "Trend Observation",
+    "likes": 14200,
+    "comments": 840,
+    "engagement": 15040,
+    "word_count": 76,
+    "post_text": "In 2019, I walked away from a high-paying executive job because I lacked freedom. Today, I run a multi-million dollar business with 0 employees.\n\nHere is how the modern portfolio career works:\n\n1. Monetize your primary skill via consulting.\n2. Productize your knowledge into digital assets.\n3. Build an audience to distribute organically.\n\nStop trading 40 hours a week for one single point of failure."
+  },
+  {
+    "id": 2,
+    "author": "Sahil Bloom",
+    "topic": "Personal Development",
+    "hook": "The most dangerous trap in your 20s and 30s: The 'When-I-Get' Fallacy.",
+    "hook_type": "Psychological Insight",
+    "likes": 21500,
+    "comments": 1120,
+    "engagement": 22620,
+    "word_count": 63,
+    "post_text": "We tell ourselves:\n• 'When I get that promotion, I'll be happy.'\n• 'When I hit $100k, I'll start relaxing.'\n\nBut the goalposts always move. True success isn't a milestone—it's a system of daily habits. If you can't find joy in the climb, you won't find it at the summit."
+  },
+  {
+    "id": 3,
+    "author": "Lenny Rachitsky",
+    "topic": "Product Management",
+    "hook": "How the best product teams actually make decisions.",
+    "hook_type": "Framework",
+    "likes": 9800,
+    "comments": 410,
+    "engagement": 10210,
+    "word_count": 52,
+    "post_text": "They don't use complex, subjective prioritization matrices.\n\nThey align strictly on two core criteria:\n1. Reach & Impact: How many users actually feel this pain?\n2. Confidence: Do we have data, or are we just guessing?\n\nIf confidence is low, you don't build—you prototype."
+  },
+  {
+    "id": 4,
+    "author": "Lara Acosta",
+    "topic": "Personal Branding",
+    "hook": "If your content isn't converting to revenue, you're missing a bridge.",
+    "hook_type": "Direct Strategy",
+    "likes": 6400,
+    "comments": 510,
+    "engagement": 6910,
+    "word_count": 57,
+    "post_text": "Likes are a vanity metric. If you want clients, transition people from reading your posts to your ecosystem.\n\nOptimize your profile funnel:\n- Clear banner stating who you help\n- A single, obvious CTA link\n- Value-driven pinned posts\n\nViews mean nothing if your profile is a dead end."
+  },
+  {
+    "id": 5,
+    "author": "Luke Matthews",
+    "topic": "LinkedIn Ghostwriting",
+    "hook": "90% of LinkedIn content is painfully boring.",
+    "hook_type": "Contrarian",
+    "likes": 8500,
+    "comments": 620,
+    "engagement": 9120,
+    "word_count": 64,
+    "post_text": "Because people write like they are trying to impress an English teacher. Corporate jargon kills attention.\n\nIf you want people to read:\n1. Write how you talk.\n2. Program in white space.\n3. Ditch the buzzwords.\n\nYou aren't writing a textbook. You're writing for a busy professional scrolling on a tiny phone screen."
+  },
+  {
+    "id": 6,
+    "author": "Liz Ryan",
+    "topic": "HR & Culture",
+    "hook": "If your employees are quiet, they aren't happy—they're terrified.",
+    "hook_type": "Insight",
+    "likes": 32000,
+    "comments": 2400,
+    "engagement": 34400,
+    "word_count": 61,
+    "post_text": "A lot of managers think a quiet team means everything is running smoothly.\n\nUsually, it means the culture is toxic enough that people realize speaking up gets them targeted.\n\nWhen psychological safety leaves the room, innovation goes with it. If you only hear 'yes,' you're driving off a cliff."
+  },
+  {
+    "id": 7,
+    "author": "Adam Grant",
+    "topic": "Workplace Psychology",
+    "hook": "Good leaders take responsibility. Great leaders pass the credit.",
+    "hook_type": "Philosophical",
+    "likes": 45000,
+    "comments": 1900,
+    "engagement": 46900,
+    "word_count": 55,
+    "post_text": "Insecure leaders absorb praise and deflect blame. Secure leaders shield their team from failure and amplify their successes.\n\nThe ultimate test of leadership is not how many followers you command, but how many leaders you create. True power comes from lifting others up, not holding them down."
+  },
+  {
+    "id": 8,
+    "author": "Richard Moore",
+    "topic": "Social Selling",
+    "hook": "Stop pitching in the first direct message.",
+    "hook_type": "Common Mistake",
+    "likes": 4200,
+    "comments": 380,
+    "engagement": 4580,
+    "word_count": 60,
+    "post_text": "Connecting on LinkedIn and immediately sending a 4-paragraph sales pitch is the digital equivalent of shouting through a megaphone at a networking event.\n\nBuild rapport first.\nAsk an open question about their business.\n\nIf there is no conversation, there is no conversion. Slow down the relationship to speed up the sale."
+  },
+  {
+    "id": 9,
+    "author": "Tim Soulo",
+    "topic": "SEO & Marketing",
+    "hook": "We spent $0 on Google Ads last year. Here is why.",
+    "hook_type": "Case Study / Curiosity",
+    "likes": 11500,
+    "comments": 890,
+    "engagement": 12390,
+    "word_count": 63,
+    "post_text": "Instead of renting traffic through ads, we invested heavily into product-led content marketing.\n\nWe don't create content to rank for high-volume keywords. We create content that naturally shows how our product solves a user problem.\n\nWhen your product is seamlessly baked into your helpful tutorials, your content becomes your highest converting sales rep."
+  },
+  {
+    "id": 10,
+    "author": "Chris Do",
+    "topic": "Freelancing Business",
+    "hook": "If you charge by the hour, you are penalizing your efficiency.",
+    "hook_type": "Value Pricing Concept",
+    "likes": 19700,
+    "comments": 1050,
+    "engagement": 20750,
+    "word_count": 67,
+    "post_text": "Imagine a designer who takes 10 hours to make a logo vs an expert who takes 1 hour to make a better one. Why should the expert get paid less?\n\nStop selling your time. Start selling the value of the outcome.\n\nClients aren't buying your hours; they are buying a solution to a business bottleneck."
+  }
+]
